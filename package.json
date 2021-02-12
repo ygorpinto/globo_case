@@ -1,5 +1,5 @@
 {
-  "name": "with-typescript",
+  "name": "case_globo",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -8,11 +8,17 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@types/styled-components": "^5.1.7",
+    "dotenv": "^8.2.0",
+    "mongodb": "^3.6.4",
     "next": "latest",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.2.1",
+    "yarn": "^1.22.10"
   },
   "devDependencies": {
+    "@types/mongodb": "^3.6.7",
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
