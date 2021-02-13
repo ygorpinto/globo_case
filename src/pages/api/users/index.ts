@@ -21,7 +21,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
      if (method === 'PUT') {
       const {db} = await connectToDatabase();
-      const update = await db.collection('globo_users').updateOne({"name":"Wallace Junior"},{$set:{"name":"ok"}});
+      const update = await db.collection('globo_users').updateOne({"name":"macacodoido"},{$set:{"name":"ok"}});
       res.status(202).json(update)
       return;
      }

@@ -1,6 +1,10 @@
 {
-    "header":{
-        "icon1":"ok"
+    "input":{
+        "placeholder":"Pesquisar"
+    },
+
+    "button":{
+        "buttontxt":"INCLUIR USUÀRIO"
     },
 
     "usersHeader":{
