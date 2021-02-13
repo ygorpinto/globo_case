@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     box-sizing: border-box;
   }
-  .HomeIcon{
+  .MainIcon{
     fill:white;
     width:30px;
     height:30px;
@@ -28,8 +28,16 @@ const GlobalStyle = createGlobalStyle`
     height:25px;
 }
 
-  .FilterIcon{
+  .FillIcon{
     fill:rgba(0,0,0,0.5);
+  }
+
+  .icons-group{
+    height:10vh;
+    width:8vw;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
   }
 `
 

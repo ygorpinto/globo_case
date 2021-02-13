@@ -12,13 +12,16 @@ import ShieldButton from '../components/Buttons/ShieldButton'
 import SearchButton from '../components/Buttons/SearchButton'
 import FilterButton from '../components/Buttons/FilterButton'
 import AddUserButton from '../components/Buttons/AddUserButton'
-import HomeIcon from '../components/Icons/HomeIcon'
+import MainIcon from '../components/Icons/MainIcon'
 import UserIcon from '../components/Icons/UserIcon'
+import HomeIcon from '../components/Icons/HomeIcon'
 import ShieldIcon from '../components/Icons/ShieldIcon'
 import SearchIcon from '../components/Icons/SearchIcon'
 import FilterIcon from '../components/Icons/FilterIcon'
 import db from '../../db.json'
 import GlobalStyle from '../components/GlobalStyles'
+import SettingsIcon from '../components/Icons/SettingsIcon'
+import LogoutIcon from '../components/Icons/LogoutIcon'
 
 const App = () => (
 <>
@@ -27,7 +30,7 @@ const App = () => (
   <WidgetUsers>
     <MainHeader>
     <LeftHeader>
-    <HomeButton><HomeIcon/></HomeButton>
+    <HomeButton><MainIcon/></HomeButton>
     <Widget>
     <UserButton><UserIcon/></UserButton>
     <ShieldButton><ShieldIcon/></ShieldButton>
@@ -40,8 +43,13 @@ const App = () => (
     </Widget>
     </LeftHeader>
     <RightHeader>
+      <Widget>
       <FilterButton><FilterIcon/></FilterButton>
       <AddUserButton><UserIcon/>{db.button.buttontxt}</AddUserButton>
+      </Widget>
+      <Widget className="icons-group">
+        <HomeIcon/><SettingsIcon/><LogoutIcon/>
+      </Widget>
     </RightHeader>
     </MainHeader>
     <UsersHeader>
