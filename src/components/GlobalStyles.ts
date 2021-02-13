@@ -8,13 +8,13 @@ const GlobalStyle = createGlobalStyle`
   }
   .MainIcon{
     fill:white;
-    width:30px;
-    height:30px;
+    width:20px;
+    height:20px;
   }
   .UserIcon{
     fill:white;
     width:15px;
-    height:20px;
+    height:15px;
   }
   .ShieldIcon{
     fill:rgba(0,0,0,0.5);
@@ -30,6 +30,8 @@ const GlobalStyle = createGlobalStyle`
 
   .FillIcon{
     fill:rgba(0,0,0,0.5);
+    width:20px;
+    height:20px;
   }
 
   .icons-group{

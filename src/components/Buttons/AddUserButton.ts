@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 
 const AddUserButton = styled.button`
+padding:8px;
 display:flex;
-font-weight:bold;
+font-size:0.7rem;
 border:none;
 border-radius:4px;
 background:#D93067;
-height:7vh;
-width:11.3vw;
+height:32px;
+width:10vw;
 justify-content:space-between;
 align-items:center;
 color:white;
