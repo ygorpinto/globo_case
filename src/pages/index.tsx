@@ -32,8 +32,8 @@ const App = () => (
     <LeftHeader>
     <HomeButton><MainIcon/></HomeButton>
     <Widget>
-    <UserButton><UserIcon/></UserButton>
     <ShieldButton><ShieldIcon/></ShieldButton>
+    <UserButton><UserIcon/></UserButton>
     </Widget>
     <Widget>
     <Input
