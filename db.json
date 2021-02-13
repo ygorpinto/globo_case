@@ -1,0 +1,15 @@
+{
+    "header":{
+        "icon1":"ok"
+    },
+
+    "usersHeader":{
+        "user":"USUÁRIO",
+        "email":"EMAIL",
+        "dtinc":"DATA DE INCLUSÃO",
+        "dtalt":"DATA DE ALTERAÇÃO",
+        "rules":"REGRAS",
+        "status":"STATUS",
+        "actions":"AÇÕES"
+    }
+}
