@@ -1,3 +1,5 @@
+import GlobalStyle from '../components/GlobalStyles'
+import db from '../../db.json'
 import Container from '../components/Container/Container'
 import MainHeader from '../components/Headers/MainHeader'
 import LeftHeader from '../components/Headers/LeftHeader'
@@ -18,10 +20,10 @@ import HomeIcon from '../components/Icons/HomeIcon'
 import ShieldIcon from '../components/Icons/ShieldIcon'
 import SearchIcon from '../components/Icons/SearchIcon'
 import FilterIcon from '../components/Icons/FilterIcon'
-import db from '../../db.json'
-import GlobalStyle from '../components/GlobalStyles'
 import SettingsIcon from '../components/Icons/SettingsIcon'
 import LogoutIcon from '../components/Icons/LogoutIcon'
+import OpenUserAdd from '../pages/_moduleAddUser'
+import FormUserAdd from '../components/FormAddUser'
 
 const App = () => (
 <>
@@ -45,7 +47,9 @@ const App = () => (
     <RightHeader>
       <Widget>
       <FilterButton><FilterIcon/></FilterButton>
-      <AddUserButton><UserIcon/>{db.button.buttontxt}</AddUserButton>
+      <AddUserButton
+      onClick={OpenUserAdd}
+      ><UserIcon/>{db.button.buttontxt}</AddUserButton>
       </Widget>
       <Widget className="icons-group">
         <HomeIcon/><SettingsIcon/><LogoutIcon/>
@@ -61,6 +65,9 @@ const App = () => (
       <p>{db.usersHeader.status}</p>
       <p>{db.usersHeader.actions}</p>
     </UsersHeader>
+    <Widget>
+    <FormUserAdd/>
+    </Widget>
   </WidgetUsers>
 </Container>
 </>
