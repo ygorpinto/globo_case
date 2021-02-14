@@ -22,10 +22,11 @@ import SearchIcon from '../components/Icons/SearchIcon'
 import FilterIcon from '../components/Icons/FilterIcon'
 import SettingsIcon from '../components/Icons/SettingsIcon'
 import LogoutIcon from '../components/Icons/LogoutIcon'
-import OpenUserAdd from '../pages/_moduleAddUser'
-import FormUserAdd from '../components/FormAddUser'
+import FormUserAdd from '../components/FormUserAdd'
 
-const App = () => (
+const App = () => {
+
+return (
 <>
 <GlobalStyle/>
 <Container>
@@ -48,7 +49,6 @@ const App = () => (
       <Widget>
       <FilterButton><FilterIcon/></FilterButton>
       <AddUserButton
-      onClick={OpenUserAdd}
       ><UserIcon/>{db.button.buttontxt}</AddUserButton>
       </Widget>
       <Widget className="icons-group">
@@ -72,5 +72,5 @@ const App = () => (
 </Container>
 </>
 )
-
+}
 export default App

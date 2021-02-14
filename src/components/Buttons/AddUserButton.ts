@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const AddUserButton = styled.button`
+const AddUserButton =  styled.button`
 padding:8px;
 display:flex;
 font-size:0.7rem;
