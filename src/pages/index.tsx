@@ -23,8 +23,15 @@ import FilterIcon from '../components/Icons/FilterIcon'
 import SettingsIcon from '../components/Icons/SettingsIcon'
 import LogoutIcon from '../components/Icons/LogoutIcon'
 import FormUserAdd from '../components/FormUserAdd'
+import { useState } from 'react'
 
 const App = () => {
+
+  const [show, setshow] = useState(false);
+
+  const showform = () => {
+    setshow(true)
+  };
 
 return (
 <>
@@ -49,6 +56,7 @@ return (
       <Widget>
       <FilterButton><FilterIcon/></FilterButton>
       <AddUserButton
+      onClick={showform}
       ><UserIcon/>{db.button.buttontxt}</AddUserButton>
       </Widget>
       <Widget className="icons-group">
@@ -66,7 +74,7 @@ return (
       <p>{db.usersHeader.actions}</p>
     </UsersHeader>
     <Widget>
-    <FormUserAdd/>
+    {show?<FormUserAdd/>:null}
     </Widget>
   </WidgetUsers>
 </Container>
