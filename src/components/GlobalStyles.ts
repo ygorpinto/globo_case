@@ -110,7 +110,7 @@ const GlobalStyle = createGlobalStyle`
 
   .mainUsers{
     width:96%;
-    height:50vh;
+    height:5vh;
     display:flex;
     font-family: 'Verdana', sans-serif;
     font-size:0.8rem;
