@@ -116,10 +116,11 @@ const GlobalStyle = createGlobalStyle`
     font-size:0.8rem;
   }
   .user{
-    margin-left:7%;
+    margin-left:3%;
     width:8vw;
   }
   .email{
+    margin-left:3%;
     margin-right:6%;
     width:8vw;
   }
@@ -128,9 +129,11 @@ const GlobalStyle = createGlobalStyle`
     width:8vw;
   }
   .dtalt{
-    margin-left:10%;
+    margin-left:11%;
     margin-right:7%;
     width:8vw;
+  }
+  
   }
   .status{
     margin-left:10.5%;
