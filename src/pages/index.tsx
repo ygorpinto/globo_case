@@ -28,11 +28,9 @@ import { useState } from 'react'
 const App = () => {
 
   const [show, setshow] = useState(false);
-
   const showform = () => {
     setshow(true);
   };
-
   const hideform = () => {
     setshow(false);
   };
