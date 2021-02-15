@@ -25,6 +25,7 @@ import LogoutIcon from '../components/Icons/LogoutIcon'
 import FormUserAdd from '../components/FormUserAdd'
 import { useState, useEffect } from 'react'
 import UsersContainer from '../components/Container/UsersContainer'
+import UserConfig from '../components/Icons/UserConfig'
 
 const App = () => {
 
@@ -100,7 +101,7 @@ return (
           <p className="dtalt">N/A</p>
           <p className="rules">01</p>
           <p className="status">Ativo</p>
-          <p className=""></p>
+          <p className="action"><UserConfig/></p>
           </div>
         )
       })}

@@ -133,12 +133,16 @@ const GlobalStyle = createGlobalStyle`
     margin-right:7%;
     width:8vw;
   }
-  
+
   }
   .status{
     margin-left:10.5%;
     width:8vw;
     color:#65CB57;
+  }
+  .action{
+    margin-left:3%;
+    fill:rgba(0,0,0,0.5);
   }
 `
 
