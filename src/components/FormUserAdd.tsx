@@ -5,16 +5,22 @@ import UserPlus from './Icons/UserPlus'
 import LogoutIcon from '../components/Icons/LogoutIcon'
 import FormCloseButton from '../components/Buttons/FormCloseButton'
 import {useState} from 'react'
+import axios from 'axios'
+
 
 const FormUserAdd = (props) => {
 
     const [user,setuser] = useState("");
     const [email, setemail] = useState("");
 
-    const AddUser = (e) => {
+    const AddUser = async (e) => {
+        let data = JSON.stringify({
+            username:user,
+            email: email
+          });
+        axios.post("http://localhost:3000/api/users",data,{headers:{"Content-Type" : "application/json"}});
         e.preventDefault();
-        console.log(user);
-        console.log(email);   
+        alert(`O usuário ${user} foi cadastrado com sucesso.`)   
     }
 
     return (
@@ -24,7 +30,7 @@ const FormUserAdd = (props) => {
             </div>
             <form className="AddUserFormIn">
                 <label className="FormUser">{db.usersHeader.user}:</label>
-                <Input 
+                <Input
                 onChange={e=>setuser(e.target.value)}
                 placeholder="Insira seu nome Completo"
                 className="FormUserInput"></Input>

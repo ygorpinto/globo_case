@@ -24,6 +24,7 @@ import SettingsIcon from '../components/Icons/SettingsIcon'
 import LogoutIcon from '../components/Icons/LogoutIcon'
 import FormUserAdd from '../components/FormUserAdd'
 import { useState } from 'react'
+import UsersContainer from '../components/Container/UsersContainer'
 
 const App = () => {
 
@@ -78,6 +79,9 @@ return (
     <Widget>
     {show?<FormUserAdd func={hideform}/>:null}
     </Widget>
+    <UsersContainer>
+      
+    </UsersContainer>
   </WidgetUsers>
 </Container>
 </>
