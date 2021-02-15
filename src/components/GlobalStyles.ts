@@ -109,9 +109,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .mainUsers{
-    width:auto;
+    width:96%;
     height:50vh;
     display:flex;
+    font-family: 'Verdana', sans-serif;
+    font-size:0.8rem;
   }
   .user{
     margin-left:7%;
@@ -122,6 +124,7 @@ const GlobalStyle = createGlobalStyle`
     width:8vw;
   }
   .created{
+    margin-left:1%;
     width:8vw;
   }
   .dtalt{
@@ -130,8 +133,9 @@ const GlobalStyle = createGlobalStyle`
     width:8vw;
   }
   .status{
-    margin-left:9.5%;
+    margin-left:10.5%;
     width:8vw;
+    color:#65CB57;
   }
 `
 

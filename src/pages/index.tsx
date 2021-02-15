@@ -94,13 +94,13 @@ return (
       {users.map((user)=>{
         return (
           <div className="mainUsers">
-          <div className="user"><p>{user.username}</p></div>
-          <div className="email"><p>{user.email}</p></div>
-          <div className="created"><p>{user.created}</p></div>
-          <div className="dtalt"><p>N/A</p></div>
-          <div className="regras"><p>01</p></div>
-          <div className="status"><p>Ativo</p></div>
-          <div className="actions"><p></p></div>
+          <p className="user">{user.username}</p>
+          <p className="email">{user.email}</p>
+          <p className="created">{user.created}</p>
+          <p className="dtalt">N/A</p>
+          <p className="rules">01</p>
+          <p className="status">Ativo</p>
+          <p className=""></p>
           </div>
         )
       })}
