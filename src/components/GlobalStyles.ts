@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
   .FillIcon{
+    margin:6px;
     fill:rgba(0,0,0,0.5);
     width:20px;
     height:20px;
@@ -44,6 +45,7 @@ const GlobalStyle = createGlobalStyle`
 
   .AddUserForm{
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
     width:50vw;
@@ -85,6 +87,25 @@ const GlobalStyle = createGlobalStyle`
     }
     padding: 5px 5px 5px 5px;
     border: rgba(0,0,0,0.8);
+  }
+
+  .btnFormBox{
+    justify-content:flex-end;
+    display:flex;
+    height:8vh;
+    width:100%;
+  }
+
+  .btnForm{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:10px;
+    width:20px;
+    height:20px;
+    border:none;
+    background:none;
+    font-weight:bolder;
   }
 `
 

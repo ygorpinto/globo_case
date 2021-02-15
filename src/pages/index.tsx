@@ -30,7 +30,11 @@ const App = () => {
   const [show, setshow] = useState(false);
 
   const showform = () => {
-    setshow(true)
+    setshow(true);
+  };
+
+  const hideform = () => {
+    setshow(false);
   };
 
 return (
@@ -74,7 +78,7 @@ return (
       <p>{db.usersHeader.actions}</p>
     </UsersHeader>
     <Widget>
-    {show?<FormUserAdd/>:null}
+    {show?<FormUserAdd func={hideform}/>:null}
     </Widget>
   </WidgetUsers>
 </Container>
