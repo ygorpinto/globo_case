@@ -1,5 +1,5 @@
-import GlobalStyle from '../components/GlobalStyles'
 import db from '../../db.json'
+import GlobalStyle from '../components/GlobalStyles'
 import Container from '../components/Container/Container'
 import MainHeader from '../components/Headers/MainHeader'
 import LeftHeader from '../components/Headers/LeftHeader'
@@ -23,18 +23,29 @@ import FilterIcon from '../components/Icons/FilterIcon'
 import SettingsIcon from '../components/Icons/SettingsIcon'
 import LogoutIcon from '../components/Icons/LogoutIcon'
 import FormUserAdd from '../components/FormUserAdd'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import UsersContainer from '../components/Container/UsersContainer'
 
 const App = () => {
 
+  const [users,setusers] = useState([]);
   const [show, setshow] = useState(false);
   const showform = () => {
     setshow(true);
   };
+
   const hideform = () => {
     setshow(false);
   };
+
+  useEffect(()=>{
+    fetch("http://localhost:3000/api/users")
+    .then(response=>response.json())
+    .then(data=>setusers(data))
+},[users])
+
+console.log(users);
+
 
 return (
 <>
@@ -80,7 +91,19 @@ return (
     {show?<FormUserAdd func={hideform}/>:null}
     </Widget>
     <UsersContainer>
-      
+      {users.map((user)=>{
+        return (
+          <div className="mainUsers">
+          <div className="user"><p>{user.username}</p></div>
+          <div className="email"><p>{user.email}</p></div>
+          <div className="created"><p>{user.created}</p></div>
+          <div className="dtalt"><p>N/A</p></div>
+          <div className="regras"><p>01</p></div>
+          <div className="status"><p>Ativo</p></div>
+          <div className="actions"><p></p></div>
+          </div>
+        )
+      })}
     </UsersContainer>
   </WidgetUsers>
 </Container>

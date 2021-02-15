@@ -107,6 +107,32 @@ const GlobalStyle = createGlobalStyle`
     background:none;
     font-weight:bolder;
   }
+
+  .mainUsers{
+    width:auto;
+    height:50vh;
+    display:flex;
+  }
+  .user{
+    margin-left:7%;
+    width:8vw;
+  }
+  .email{
+    margin-right:6%;
+    width:8vw;
+  }
+  .created{
+    width:8vw;
+  }
+  .dtalt{
+    margin-left:10%;
+    margin-right:7%;
+    width:8vw;
+  }
+  .status{
+    margin-left:9.5%;
+    width:8vw;
+  }
 `
 
 

@@ -7,16 +7,17 @@ import FormCloseButton from '../components/Buttons/FormCloseButton'
 import {useState} from 'react'
 import axios from 'axios'
 
-
 const FormUserAdd = (props) => {
 
     const [user,setuser] = useState("");
     const [email, setemail] = useState("");
 
     const AddUser = async (e) => {
+        const date = new Date()
         let data = JSON.stringify({
             username:user,
-            email: email
+            email: email,
+            created:`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
           });
         axios.post("http://localhost:3000/api/users",data,{headers:{"Content-Type" : "application/json"}});
         e.preventDefault();
