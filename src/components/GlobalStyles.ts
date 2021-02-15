@@ -141,7 +141,7 @@ const GlobalStyle = createGlobalStyle`
     color:#65CB57;
   }
   .action{
-    margin-left:3%;
+    margin-left:1.6%;
     fill:rgba(0,0,0,0.5);
   }
 `

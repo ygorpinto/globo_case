@@ -1,5 +1,6 @@
 import db from '../../db.json'
 import GlobalStyle from '../components/GlobalStyles'
+import { useState, useEffect } from 'react'
 import Container from '../components/Container/Container'
 import MainHeader from '../components/Headers/MainHeader'
 import LeftHeader from '../components/Headers/LeftHeader'
@@ -23,9 +24,9 @@ import FilterIcon from '../components/Icons/FilterIcon'
 import SettingsIcon from '../components/Icons/SettingsIcon'
 import LogoutIcon from '../components/Icons/LogoutIcon'
 import FormUserAdd from '../components/FormUserAdd'
-import { useState, useEffect } from 'react'
 import UsersContainer from '../components/Container/UsersContainer'
 import UserConfig from '../components/Icons/UserConfig'
+import UserDelete from '../components/Icons/UserDelete'
 
 const App = () => {
 
@@ -101,7 +102,7 @@ return (
           <p className="dtalt">N/A</p>
           <p className="rules">01</p>
           <p className="status">Ativo</p>
-          <p className="action"><UserConfig/></p>
+          <Widget className="action"><UserConfig/><UserDelete/></Widget>
           </div>
         )
       })}
