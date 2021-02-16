@@ -43,7 +43,7 @@ const App = () => {
   };
 
   useEffect(()=>{
-    fetch("http://localhost:3000/api/users")
+    fetch("https://globo-case-pylhf8g6b.vercel.app/api/users")
     .then(response=>response.json())
     .then(data=>setusers(data))
 },[users])
@@ -53,7 +53,7 @@ const Userdelete = () => {
   let email = users.map(item=>item.email)
     axios({
             method: 'DELETE',
-            url: 'http://localhost:3000/api/users',
+            url: 'https://globo-case-pylhf8g6b.vercel.app/api/users',
             data: {
             username: user[0],
             email: email[0]
