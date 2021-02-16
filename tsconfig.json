@@ -19,5 +19,5 @@
     "target": "esnext"
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts","**/*.ts", "**/*.tsx", "src/utils/mongodb.js", "src/pages/_document.js", "src/components/GlobalStyles.js", "src/pages/index.jsx", "src/components/FormUserAdd.js"]
+  "include": ["next-env.d.ts","**/*.ts", "**/*.tsx", "src/utils/mongodb.js", "src/components/FormUserAdd.tsx"]
 }
