@@ -27,6 +27,8 @@ import FormUserAdd from '../components/FormUserAdd'
 import UsersContainer from '../components/Container/UsersContainer'
 import UserConfig from '../components/Icons/UserConfig'
 import UserDelete from '../components/Icons/UserDelete'
+import DeleteUser from '../components/Buttons/DeleteUser'
+import axios from 'axios'
 
 const App = () => {
 
@@ -46,8 +48,18 @@ const App = () => {
     .then(data=>setusers(data))
 },[users])
 
-console.log(users);
-
+const Userdelete = () => {
+  let user = users.map(item=>item.username)
+  let email = users.map(item=>item.email)
+    axios({
+            method: 'DELETE',
+            url: 'http://localhost:3000/api/users',
+            data: {
+            username: user[0],
+            email: email[0]
+            }
+          })
+}
 
 return (
 <>
@@ -102,7 +114,7 @@ return (
           <p className="dtalt">N/A</p>
           <p className="rules">01</p>
           <p className="status">Ativo</p>
-          <Widget className="action"><UserConfig/><UserDelete/></Widget>
+          <Widget className="action"><UserConfig/><DeleteUser onClick={Userdelete}><UserDelete/></DeleteUser></Widget>
           </div>
         )
       })}

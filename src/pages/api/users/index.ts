@@ -21,14 +21,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
      if (method === 'PUT') {
       const {db} = await connectToDatabase();
-      const update = await db.collection('globo_users').updateOne({"name":"macacodoido"},{$set:{"name":"ok"}});
+      const update = await db.collection('globo_users').updateOne({db},{$set:req.body});
       res.status(202).json(update)
       return;
      }
 
      if (method === 'DELETE') {
       const {db} = await connectToDatabase();
-      const remove = await db.collection('globo_users').deleteOne({"name":"ok"});
+      const remove = await db.collection('globo_users').deleteOne(req.body);
       res.status(202).json(remove);
       return;
      }
