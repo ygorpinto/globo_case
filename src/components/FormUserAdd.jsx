@@ -4,12 +4,11 @@ import AddUserButton from './Buttons/AddUserButton'
 import UserPlus from './Icons/UserPlus'
 import LogoutIcon from './Icons/LogoutIcon'
 import FormCloseButton from './Buttons/FormCloseButton'
-import {ReactNode, useState} from 'react'
+import {useState} from 'react'
 import axios from 'axios'
 
-type props = ReactNode
 
-const FormUserAdd = (props:props) => {
+const FormUserAdd = (props) => {
 
     const [user,setuser] = useState("");
     const [email, setemail] = useState("");

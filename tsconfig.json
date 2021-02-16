@@ -16,8 +16,8 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext" 
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts","**/*.ts", "**/*.tsx", "src/utils/mongodb.js", "src/components/FormUserAdd.tsx"]
+  "include": ["next-env.d.ts","**/*.ts", "**/*.tsx", "src/utils/mongodb.js", "src/components/FormUserAdd.jsx"]
 }
