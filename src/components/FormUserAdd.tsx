@@ -20,7 +20,7 @@ const FormUserAdd = (props) => {
             email: email,
             created:`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
           });
-        axios.post("https://globo-case-pylhf8g6b.vercel.app/api/users",data,{headers:{"Content-Type" : "application/json"}});
+        axios.post("https://globo-case.vercel.app/api/users",data,{headers:{"Content-Type" : "application/json"}});
         e.preventDefault();
         alert(`O usuário ${user} foi cadastrado com sucesso.`)   
     }
