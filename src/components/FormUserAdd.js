@@ -2,9 +2,9 @@ import db from '../../db.json'
 import Input from './Input/Input'
 import AddUserButton from './Buttons/AddUserButton'
 import UserPlus from './Icons/UserPlus'
-import LogoutIcon from '../components/Icons/LogoutIcon'
-import FormCloseButton from '../components/Buttons/FormCloseButton'
-import {useState} from 'react'
+import LogoutIcon from './Icons/LogoutIcon'
+import FormCloseButton from './Buttons/FormCloseButton'
+import {ReactNode, useState} from 'react'
 import axios from 'axios'
 
 const FormUserAdd = (props) => {
