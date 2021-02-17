@@ -37,14 +37,14 @@ const FormUserAdd = (props) => {
                 <label className="FormUser">{db.usersHeader.user}:</label>
                 <Input
                 type="text"
-                required
+                required="true"
                 value={user}
                 onChange={e=>setuser(e.target.value)}
                 placeholder="Insira seu nome Completo"
                 className="FormUserInput"></Input>
                 <label className="FormUser">{db.usersHeader.email}:</label>
                 <Input 
-                required
+                required="true"
                 type="email"
                 value={email}
                 onChange={e=>setemail(e.target.value)}
