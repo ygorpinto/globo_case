@@ -42,7 +42,7 @@ Depois instale as Dependências utilizadas:
 - Dependências utilizadas :
 - StyledComponents : # npm install --save styled-components
 - Driver do MongoDB : # npm install mongodb --save
-- Typescript : # npm install -g typescript@next   # npm install --save @types/node
+- Typescript : # npm install --save-dev typescript   # npm install --save-dev @types/react @types/react-dom @types/node
 
 ### Feito isso execute o comando # npm run dev 
 
