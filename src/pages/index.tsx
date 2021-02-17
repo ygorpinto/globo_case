@@ -1,6 +1,9 @@
-import db from '../../db.json'
+import Head from "next/head"
 import GlobalStyle from '../components/GlobalStyles'
 import { useState, useEffect } from 'react'
+import axios from 'axios'
+
+import db from '../../db.json'
 import Container from '../components/Container/Container'
 import MainHeader from '../components/Headers/MainHeader'
 import LeftHeader from '../components/Headers/LeftHeader'
@@ -28,7 +31,6 @@ import UsersContainer from '../components/Container/UsersContainer'
 import UserConfig from '../components/Icons/UserConfig'
 import UserDelete from '../components/Icons/UserDelete'
 import DeleteUser from '../components/Buttons/DeleteUser'
-import axios from 'axios'
 
 const App = () => {
 
@@ -43,7 +45,7 @@ const App = () => {
   };
 
   useEffect(()=>{
-    fetch("https://globo-case.vercel.app/api/users")
+    fetch("http://localhost:3000/api/users")
     .then(response=>response.json())
     .then(data=>setusers(data))
 },[users])
@@ -53,7 +55,7 @@ const Userdelete = () => {
   let email = users.map(item=>item.email)
     axios({
             method: 'DELETE',
-            url: 'https://globo-case.vercel.app/api/users',
+            url: 'http://localhost:3000/api/users',
             data: {
             username: user[0],
             email: email[0]
@@ -64,6 +66,7 @@ const Userdelete = () => {
 return (
 <>
 <GlobalStyle/>
+<Head><title>{db.title.title}</title></Head>
 <Container>
   <WidgetUsers>
     <MainHeader>
@@ -111,10 +114,13 @@ return (
           <p className="user">{user.username}</p>
           <p className="email">{user.email}</p>
           <p className="created">{user.created}</p>
-          <p className="dtalt">N/A</p>
-          <p className="rules">01</p>
-          <p className="status">Ativo</p>
-          <Widget className="action"><UserConfig/><DeleteUser onClick={Userdelete}><UserDelete/></DeleteUser></Widget>
+          <p className="dtalt">{db.users.dtalt}</p>
+          <p className="rules">{db.users.rules}</p>
+          <p className="status">{db.users.status}</p>
+          <Widget className="action"><UserConfig/><DeleteUser 
+          onClick={Userdelete}><UserDelete/>
+          </DeleteUser>
+          </Widget>
           </div>
         )
       })}
