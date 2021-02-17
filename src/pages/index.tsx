@@ -33,7 +33,9 @@ import UserDelete from '../components/Icons/UserDelete'
 import DeleteUser from '../components/Buttons/DeleteUser'
 
 const App = () => {
-
+  const [status, setstatus] = useState(true);
+  const [searchuser, setsearchuser] = useState([]);
+  const [search, setsearch] = useState("");
   const [users,setusers] = useState([]);
   const [show, setshow] = useState(false);
   const showform = () => {
@@ -45,22 +47,31 @@ const App = () => {
   };
 
   useEffect(()=>{
-    fetch("http://localhost:3000/api/users")
+    fetch("http://globo-case.vercel.app/api/users")
     .then(response=>response.json())
     .then(data=>setusers(data))
+    if (search === ""){
+      setstatus(true);
+    }
 },[users])
 
 const Userdelete = () => {
-  let user = users.map(item=>item.username)
-  let email = users.map(item=>item.email)
+  const user = (users.map(item=>item.username));
+  if (confirm(`Tem certeza que quer deletar o usuário`)){
     axios({
             method: 'DELETE',
-            url: 'http://localhost:3000/api/users',
-            data: {
-            username: user[0],
-            email: email[0]
-            }
+            url: `http://globo-case.vercel.app/api/users/${user[0]}`,
           })
+  }
+}
+
+const SearchUser = async () => {
+const res = await axios.get(`http://globo-case.vercel.app/api/users/${search}`);
+const data = await res.data
+const result = [];
+result.push(data);
+setsearchuser(result)
+setstatus(false);
 }
 
 return (
@@ -78,9 +89,10 @@ return (
     </Widget>
     <Widget>
     <Input
+    onChange={e=>setsearch(e.target.value)}
     placeholder={db.input.placeholder}
     ></Input>
-    <SearchButton><SearchIcon/></SearchButton>
+    <SearchButton onClick={SearchUser}><SearchIcon/></SearchButton>
     </Widget>
     </LeftHeader>
     <RightHeader>
@@ -108,7 +120,22 @@ return (
     {show?<FormUserAdd func={hideform}/>:null}
     </Widget>
     <UsersContainer>
-      {users.map((user)=>{
+      {status?users.map((user)=>{
+        return (
+          <div className="mainUsers">
+          <p className="user">{user.username}</p>
+          <p className="email">{user.email}</p>
+          <p className="created">{user.created}</p>
+          <p className="dtalt">{db.users.dtalt}</p>
+          <p className="rules">{db.users.rules}</p>
+          <p className="status">{db.users.status}</p>
+          <Widget className="action"><UserConfig/><DeleteUser 
+          onClick={Userdelete}><UserDelete/>
+          </DeleteUser>
+          </Widget>
+          </div>
+        )
+      }):searchuser.map((user)=>{
         return (
           <div className="mainUsers">
           <p className="user">{user.username}</p>

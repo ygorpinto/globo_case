@@ -20,9 +20,12 @@ const FormUserAdd = (props) => {
             email: email,
             created:`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
           });
-        axios.post("http://localhost:3000/api/users",data,{headers:{"Content-Type" : "application/json"}});
+        axios.post("http://globo-case.vercel.app/api/users",data,{headers:{"Content-Type" : "application/json"}});
+        setuser("");
+        setemail("");  
         e.preventDefault();
-        alert(`O usuário ${user} foi cadastrado com sucesso.`)   
+        alert(`O usuário ${user} foi cadastrado com sucesso.`)
+
     }
 
     return (
@@ -33,11 +36,13 @@ const FormUserAdd = (props) => {
             <form className="AddUserFormIn">
                 <label className="FormUser">{db.usersHeader.user}:</label>
                 <Input
+                value={user}
                 onChange={e=>setuser(e.target.value)}
                 placeholder="Insira seu nome Completo"
                 className="FormUserInput"></Input>
                 <label className="FormUser">{db.usersHeader.email}:</label>
                 <Input 
+                value={email}
                 onChange={e=>setemail(e.target.value)}
                 placeholder="Insira o seu Email"
                 className="FormUserInput"></Input>
