@@ -14,6 +14,9 @@ const FormUserAdd = (props) => {
     const [email, setemail] = useState("");
 
     const AddUser = async (e) => {
+        if (user === "" || email === "")
+        {alert("Favor preencha todos os campos corretamente")}
+        else {
         const date = new Date()
         let data = JSON.stringify({
             username:user,
@@ -25,7 +28,7 @@ const FormUserAdd = (props) => {
         setemail("");  
         e.preventDefault();
         alert(`O usuário ${user} foi cadastrado com sucesso.`)
-
+        }
     }
 
     return (
@@ -37,14 +40,12 @@ const FormUserAdd = (props) => {
                 <label className="FormUser">{db.usersHeader.user}:</label>
                 <Input
                 type="text"
-                required="true"
                 value={user}
                 onChange={e=>setuser(e.target.value)}
                 placeholder="Insira seu nome Completo"
                 className="FormUserInput"></Input>
                 <label className="FormUser">{db.usersHeader.email}:</label>
                 <Input 
-                required="true"
                 type="email"
                 value={email}
                 onChange={e=>setemail(e.target.value)}
