@@ -36,12 +36,16 @@ const FormUserAdd = (props) => {
             <form className="AddUserFormIn">
                 <label className="FormUser">{db.usersHeader.user}:</label>
                 <Input
+                type="text"
+                required
                 value={user}
                 onChange={e=>setuser(e.target.value)}
                 placeholder="Insira seu nome Completo"
                 className="FormUserInput"></Input>
                 <label className="FormUser">{db.usersHeader.email}:</label>
                 <Input 
+                required
+                type="email"
                 value={email}
                 onChange={e=>setemail(e.target.value)}
                 placeholder="Insira o seu Email"
