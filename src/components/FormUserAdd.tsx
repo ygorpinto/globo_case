@@ -20,7 +20,7 @@ const FormUserAdd = (props) => {
             email: email,
             created:`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
           });
-        axios.post("http://globo-case.vercel.app/api/users",data,{headers:{"Content-Type" : "application/json"}});
+        axios.post("https://globo-case.vercel.app/api/users",data,{headers:{"Content-Type" : "application/json"}});
         setuser("");
         setemail("");  
         e.preventDefault();

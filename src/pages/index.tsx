@@ -47,7 +47,7 @@ const App = () => {
   };
 
   useEffect(()=>{
-    fetch("http://globo-case.vercel.app/api/users")
+    fetch("https://globo-case.vercel.app/api/users")
     .then(response=>response.json())
     .then(data=>setusers(data))
     if (search === ""){
@@ -60,13 +60,13 @@ const Userdelete = () => {
   if (confirm(`Tem certeza que quer deletar o usuário`)){
     axios({
             method: 'DELETE',
-            url: `http://globo-case.vercel.app/api/users/${user[0]}`,
+            url: `https://globo-case.vercel.app/api/users/${user[0]}`,
           })
   }
 }
 
 const SearchUser = async () => {
-const res = await axios.get(`http://globo-case.vercel.app/api/users/${search}`);
+const res = await axios.get(`https://globo-case.vercel.app/api/users/${search}`);
 const data = await res.data
 const result = [];
 result.push(data);
